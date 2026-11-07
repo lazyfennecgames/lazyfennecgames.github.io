@@ -1,48 +1,67 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Planet Merge – Terms of Use</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Terms of Use – Planet Merge</title><meta name="description" content="Terms of Use for Planet Merge by Lazy Fennec">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@400;600;700&display=swap">
 <style>
-  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;max-width:720px;margin:0 auto;padding:24px 16px;color:#1b1f3b;background:#fff}
-  h1{font-size:1.8rem;margin-bottom:.2em}
-  h2{font-size:1.2rem;margin-top:1.8em}
-  .meta{color:#666;font-size:.9rem}
-  a{color:#5b4bd6}
-</style>
-</head>
-<body>
-<h1>Terms of Use</h1>
-<p class="meta"><a href="https://lazyfennecgames.github.io/index.html">Lazy Fennec</a> · Planet Merge · Last updated: November 7, 2026</p>
-
-<p>These Terms of Use ("Terms") apply to the mobile game <strong>Planet Merge</strong> ("the game"), published by <strong>Lazy Fennec</strong> ("we", "us"). By downloading or playing the game, you agree to these Terms. If you are under 18, please review them with a parent or guardian.</p>
-
-<h2>Using the game</h2>
-<p>Planet Merge is free to download and play. We grant you a personal, non-exclusive, non-transferable license to use the game on your own devices. You may not copy, modify, sell, or reverse-engineer the game, and you may not use cheats, hacks, bots, or any other means to gain an unfair advantage or interfere with the game.</p>
-
-<h2>Scores and progress</h2>
-<p>Your best score and settings are saved on your device. They are not stored on our servers, so they may be lost if you uninstall the game, clear its data, or change devices.</p>
-
-<h2>Advertising</h2>
-<p>The current version of the game does not show advertisements. Future versions may show ads provided by third parties such as Google AdMob. If we add ads, we will update our <a href="https://mhsaomidvar.github.io/planet-merge-privacy/">Privacy Policy</a> to explain how they work before releasing that version.</p>
-
-<h2>Optional purchases</h2>
-<p>Future versions may offer optional purchases, such as removing ads. If purchases are added, they are processed by Google Play and are subject to Google Play's <a href="https://play.google.com/about/play-terms/">terms</a> and refund policy. Prices are shown in the store before you pay. Purchased items that are not used up (such as removing ads) can be restored through Google Play if you reinstall the game or change phones. Parents can require approval for their child's purchases in the Google Play settings.</p>
-
-<h2>Changes and availability</h2>
-<p>We may update the game, change or remove features, or discontinue it at any time. The game is provided "as is", and we do not guarantee that it will always be available or free of errors.</p>
-
-<h2>Limitation of liability</h2>
-<p>To the extent permitted by law, we are not responsible for indirect damages or loss of data resulting from your use of the game. Nothing in these Terms limits any consumer rights you have under the law of your country.</p>
-
-<h2>Changes to these Terms</h2>
-<p>We may update these Terms from time to time. When we do, we will change the "Last updated" date at the top of this page.</p>
-
-<h2>Governing law</h2>
-<p>These Terms are governed by the laws of the Republic of Türkiye, without affecting any mandatory consumer protection rules that apply where you live.</p>
-
-<h2>Contact us</h2>
-<p>If you have questions about these Terms, contact us at: <a href="mailto:lazyfennec.games@gmail.com">lazyfennec.games@gmail.com</a></p>
-</body>
-</html>
+:root{--bg:#FFF4F8;--card:#FFFFFF;--ink:#3A1F47;--soft:#7B6488;--line:#F3D7E4;--pink:#D63A78;--chip:#FFE3EF}
+@media (prefers-color-scheme:dark){:root{--bg:#1E1426;--card:#2A1D35;--ink:#F6E9F2;--soft:#BBA5C8;--line:#3D2B4B;--pink:#FF7AAE;--chip:#3A2848}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Nunito",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-left)) 56px}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:18px}
+.brand{font:700 15px "Fredoka",system-ui,sans-serif;color:var(--soft);text-decoration:none;letter-spacing:.02em}
+.langs{display:flex;gap:6px}
+.langs button{font:600 14px "Fredoka",system-ui,sans-serif;border:1.5px solid var(--pink);background:transparent;color:var(--pink);border-radius:999px;padding:5px 14px;cursor:pointer}
+.langs button[aria-pressed=true]{background:var(--pink);color:#fff}
+h1{font:700 clamp(28px,6vw,38px)/1.15 "Fredoka",system-ui,sans-serif;margin:0 0 4px}
+.game{font:600 17px "Fredoka",system-ui,sans-serif;color:var(--pink);margin:0}
+.updated{color:var(--soft);font-size:14px;margin:4px 0 20px}
+section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin:14px 0}
+h2{font:600 20px "Fredoka",system-ui,sans-serif;margin:0 0 6px}
+p{margin:8px 0}
+a{color:var(--pink)}
+.intro p{font-size:17px}
+footer{color:var(--soft);font-size:14px;margin-top:28px;text-align:center}
+.cards{display:grid;gap:14px}
+.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;text-decoration:none;color:var(--ink)}
+.card b{font:700 20px "Fredoka",system-ui,sans-serif;display:block}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.links a{background:var(--chip);border-radius:999px;padding:6px 14px;text-decoration:none;font-weight:600}
+body.space{--bg:#F3F1FF;--line:#DCD6FA;--pink:#5B3FD6;--chip:#E6E0FF;--soft:#6E6890}
+@media (prefers-color-scheme:dark){body.space{--bg:#0F0E24;--card:#1A1838;--ink:#ECEAFF;--soft:#A9A4D6;--line:#2E2A5A;--pink:#A48CFF;--chip:#2A2556}}
+body.space .wrap{background:radial-gradient(circle at 85% 0,rgba(164,140,255,.18),transparent 45%)}
+.card .tag{font:600 13px "Fredoka",system-ui,sans-serif;color:var(--soft);display:block;margin:2px 0 6px}
+.card.space{border-color:#DCD6FA}.card.space .links a{background:#E6E0FF;color:#5B3FD6}
+@media (prefers-color-scheme:dark){.card.space .links a{background:#2A2556;color:#C3B4FF}}
+</style></head><body data-game="Planet Merge" class="space"><div class="wrap">
+<header><a class="brand" href="../index.html">LAZY FENNEC</a><div class="langs"><button data-l="en" aria-pressed="true">English</button><button data-l="tr" aria-pressed="false">Türkçe</button></div></header>
+<main data-lang="en"><p class="game">Planet Merge</p><h1>Terms of Use</h1><p class="updated">Last updated: 7 November 2026</p>
+<div class="intro"><p>These terms apply when you play Planet Merge (“the game”), a free game made by Lazy Fennec. By playing, you agree to them. If you are under 18, please read them with a parent or guardian.</p></div>
+<section><h2>Using the game</h2><p>The game is free to download and play. We give you a personal, non-transferable licence to play it on your own devices for your own enjoyment.</p><p>Please don’t copy, modify, sell or reverse-engineer the game, and don’t use cheats, hacks or bots.</p></section>
+<section><h2>Scores and progress</h2><p>Your best score and settings are saved only on your device. We don’t keep a copy, so they may be lost if you uninstall the game, clear its data or change phones.</p></section>
+<section><h2>Ads</h2><p>The current version of the game shows no ads. Future versions may show ads from Google AdMob. Before that happens, we will update our <a href="https://mhsaomidvar.github.io/planet-merge-privacy/">Privacy Policy</a> to explain how ads work.</p></section>
+<section><h2>Optional purchases</h2><p>If the game offers purchases (for example removing ads), they are made through Google Play and follow <a href="https://play.google.com/about/play-terms/">Google Play’s terms</a> and refund policy. Prices are shown in the store before you pay.</p><p>One-time purchases such as removing ads can be restored through Google Play if you reinstall the game or change phones.</p><p>Parents: you can require approval for purchases in your child’s Google Play settings.</p></section>
+<section><h2>Changes and availability</h2><p>We may update the game, change or remove features, or stop offering it. We work to keep it running smoothly, but the game is provided “as is”, without promises that it will always be available or free of errors.</p></section>
+<section><h2>Liability</h2><p>To the extent the law allows, Lazy Fennec is not liable for indirect damages or loss of data arising from use of the game. Nothing in these terms limits the rights you have as a consumer under the law of your country.</p></section>
+<section><h2>Changes to these terms</h2><p>If we change these terms, we will update the date at the top of this page.</p></section>
+<section><h2>Law and contact</h2><p>These terms are governed by the laws of the Republic of Türkiye, without affecting the consumer protection rules of the country you live in.</p><p>Questions? Write to <a href="mailto:lazyfennec.games@gmail.com">lazyfennec.games@gmail.com</a>.</p></section>
+</main>
+<main data-lang="tr" hidden><p class="game">Planet Merge</p><h1>Kullanım Şartları</h1><p class="updated">Son güncelleme: 7 Kasım 2026</p>
+<div class="intro"><p>Bu şartlar, Lazy Fennec tarafından yapılan ücretsiz oyun Planet Merge’ü (“oyun”) oynadığında geçerlidir. Oyunu oynayarak bu şartları kabul etmiş olursun. 18 yaşından küçüksen lütfen bir ebeveynin ya da velinle birlikte oku.</p></div>
+<section><h2>Oyunun kullanımı</h2><p>Oyunu indirmek ve oynamak ücretsizdir. Sana oyunu kendi cihazlarında, kendi eğlencen için oynaman amacıyla kişisel ve devredilemez bir kullanım izni veriyoruz.</p><p>Lütfen oyunu kopyalama, değiştirme, satma ya da tersine mühendislik yapma; hile, hack ya da bot kullanma.</p></section>
+<section><h2>Skorlar ve ilerleme</h2><p>En yüksek skorun ve ayarların sadece cihazında saklanır. Bizde bir kopyası yoktur; oyunu silersen, verilerini temizlersen ya da telefon değiştirirsen kaybolabilir.</p></section>
+<section><h2>Reklamlar</h2><p>Oyunun şu anki sürümünde reklam yoktur. İleriki sürümlerde Google AdMob reklamları gösterilebilir. Bu olmadan önce reklamların nasıl çalıştığını anlatmak için <a href="https://mhsaomidvar.github.io/planet-merge-privacy/">Gizlilik Politikamızı</a> güncelleyeceğiz.</p></section>
+<section><h2>İsteğe bağlı satın almalar</h2><p>Oyunda satın alma sunulursa (örneğin reklamları kaldırma), bunlar Google Play üzerinden yapılır ve <a href="https://play.google.com/about/play-terms/">Google Play şartlarına</a> ve iade politikasına tabidir. Fiyatlar ödeme yapmadan önce mağazada gösterilir.</p><p>Reklamları kaldırma gibi tek seferlik satın almalar, oyunu yeniden yüklersen ya da telefon değiştirirsen Google Play üzerinden geri yüklenebilir.</p><p>Ebeveynler: Çocuğunuzun Google Play ayarlarından satın almalar için onay şartı koyabilirsiniz.</p></section>
+<section><h2>Değişiklikler ve erişilebilirlik</h2><p>Oyunu güncelleyebilir, özellikleri değiştirebilir ya da kaldırabilir veya oyunu yayından kaldırabiliriz. Oyunun sorunsuz çalışması için çalışırız ama oyun “olduğu gibi” sunulur; her zaman erişilebilir ya da hatasız olacağına dair söz verilmez.</p></section>
+<section><h2>Sorumluluk</h2><p>Yasaların izin verdiği ölçüde Lazy Fennec, oyunun kullanımından doğan dolaylı zararlardan ya da veri kaybından sorumlu değildir. Bu şartlar, ülkenin yasalarına göre tüketici olarak sahip olduğun hakları sınırlamaz.</p></section>
+<section><h2>Şartlardaki değişiklikler</h2><p>Bu şartları değiştirirsek sayfanın üstündeki tarihi güncelleriz.</p></section>
+<section><h2>Hukuk ve iletişim</h2><p>Bu şartlar, yaşadığın ülkenin tüketiciyi koruma kurallarını etkilemeksizin Türkiye Cumhuriyeti yasalarına tabidir.</p><p>Soruların mı var? <a href="mailto:lazyfennec.games@gmail.com">lazyfennec.games@gmail.com</a> adresine yaz.</p></section>
+</main>
+<footer>© 2026 Lazy Fennec · <a href="mailto:lazyfennec.games@gmail.com">lazyfennec.games@gmail.com</a></footer></div><script>
+(function(){var q=new URLSearchParams(location.search).get('lang')||'';var nav=(navigator.language||'en').toLowerCase();
+var l=(q||nav).slice(0,2)==='tr'?'tr':'en';show(l);
+document.querySelectorAll('.langs button').forEach(function(b){b.onclick=function(){show(b.dataset.l)}});
+function show(l){document.documentElement.lang=l;document.querySelectorAll('[data-lang]').forEach(function(e){e.hidden=e.dataset.lang!==l});
+document.querySelectorAll('.langs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+var t=document.querySelector('[data-lang="'+l+'"] h1');if(t)document.title=t.textContent+' – '+document.body.dataset.game;}})();
+</script></body></html>
