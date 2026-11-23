@@ -52,7 +52,8 @@
   if (far) {
     var seed = 7, rnd = function () { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
     var frag = document.createDocumentFragment();
-    for (var i = 0; i < 130; i++) {
+    var starCount = document.documentElement.classList.contains('lf-lite') ? 55 : 130;
+    for (var i = 0; i < starCount; i++) {
       var s = document.createElement('span'), sz = rnd() < 0.85 ? 1 + rnd() * 1.6 : 2.6 + rnd() * 1.2;
       s.className = 'lf-star';
       s.style.cssText = 'left:' + (rnd() * 100).toFixed(2) + '%;top:' + (rnd() * 100).toFixed(2) + '%;width:' + sz.toFixed(1) + 'px;height:' + sz.toFixed(1) +
@@ -84,7 +85,7 @@
   var mx = 0, my = 0, raf = 0;
   function apply() {
     raf = 0;
-    if (reduce) return;
+    if (reduce || document.documentElement.classList.contains('lf-lite')) return;
     var sy = window.scrollY || 0;
     if (far) far.style.transform = 'translate(' + (mx * -14) + 'px,' + (my * -14 - sy * 0.02) + 'px)';
     if (mid) mid.style.transform = 'translate(' + (mx * -38) + 'px,' + (my * -30 - sy * 0.06) + 'px)';

@@ -294,14 +294,15 @@
       const dayT = document.documentElement.getAttribute('data-theme') === 'day' ? 1 : 0;
       this.day = this.day == null ? dayT : this.day + (dayT - this.day) * 0.07;
       if (Math.abs(dayT - this.day) < 0.002) this.day = dayT;
-      if (r.bottom < -50 || r.top > H + 50) {
+      this.visible = !(r.bottom < -50 || r.top > H + 50);
+      if (!this.visible) {
         // Film ekran dışında: menü görünür kalsın (ör. sayfa doğrudan #iletisim ile açıldıysa).
         if (this.navEl && r.bottom < -50) { this.navEl.style.opacity = '1'; this.navEl.style.pointerEvents = 'auto'; }
         return;
       }
       const sp = cl(-r.top / Math.max(1, r.height - H));
       const p = Math.max(sp, (this.props.progress ?? 0) / 100);
-      const dpr = Math.min(2, window.devicePixelRatio || 1);
+      const dpr = Math.min(this.maxDpr || 2, window.devicePixelRatio || 1);
       if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
       const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, W, H);
       // viewport: full screen -> hero card
@@ -331,7 +332,26 @@
       const nav = cl((p - 0.93) / 0.05);
       set(this.navEl, 'opacity', nav.toFixed(3)); set(this.navEl, 'pointerEvents', nav > 0.5 ? 'auto' : 'none');
     };
-    this.tick = (ts) => { this.loopId = requestAnimationFrame(this.tick); try { this.frame((ts || 0) / 1000); } catch (er) { if (!this.errOnce) { this.errOnce = 1; console.log('[LF] frame', er); } } };
+    // Performans: zayıf cihazda film daha düşük çözünürlükte çizilir; kare süresi uzarsa kalite kendiliğinden düşer.
+    const R = document.documentElement;
+    this.maxDpr = R.classList.contains('lf-lite') ? 1 : (window.matchMedia && window.matchMedia('(pointer: coarse)').matches ? 1.5 : 2);
+    this.ema = 0; this.nf = 0; this.lastTs = 0;
+    this.tick = (ts) => {
+      this.loopId = requestAnimationFrame(this.tick);
+      if (this.lastTs && this.visible && !document.hidden) {
+        const d = ts - this.lastTs;
+        if (d > 0 && d < 250) {
+          this.ema = this.ema ? this.ema * 0.9 + d * 0.1 : d;
+          if (++this.nf > 45 && this.ema > 30 && this.maxDpr > 0.75) {
+            this.maxDpr = Math.max(0.75, Math.min(window.devicePixelRatio || 1, this.maxDpr) * 0.7);
+            this.nf = 0; this.ema = 0;
+            R.classList.add('lf-lite');
+          }
+        }
+      }
+      this.lastTs = ts;
+      try { this.frame((ts || 0) / 1000); } catch (er) { if (!this.errOnce) { this.errOnce = 1; console.log('[LF] frame', er); } }
+    };
   }
 
   function boot() {
@@ -453,6 +473,19 @@
       var dest = siteTarget(dir);
       if (dest !== 'native') { e.preventDefault(); if (!anim) go(dest); }
     });
+
+    // "Siteye geç": filmi atlayıp doğrudan ana sayfaya (kasma olursa diye)
+    var skip = $('lf-skip');
+    if (skip) {
+      skip.addEventListener('click', function () {
+        if (anim) { cancelAnimationFrame(anim); anim = null; }
+        jump(range().end); root.style.scrollBehavior = ''; animEnd = performance.now();
+        skip.blur();
+      });
+      var updSkip = function () { var g = range(); skip.classList.toggle('is-hidden', window.scrollY > g.top + g.len * 0.88); };
+      window.addEventListener('scroll', updSkip, { passive: true });
+      updSkip();
+    }
 
     // Kaydırma çubuğuyla sürüklenip iki sahne arasında bırakılırsa en yakın sahneye otur
     window.addEventListener('scroll', function () {
