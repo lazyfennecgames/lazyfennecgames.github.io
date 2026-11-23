@@ -646,3 +646,34 @@ html[lang="fa"] .lf-mt__title { line-height: 1.4; }
 /* Alt bilgi: oyunların gizlilik sayfaları bağlantısı */
 .lf-footer__legal { color: inherit; opacity: .75; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,138,61,.5); }
 .lf-footer__legal:hover { opacity: 1; color: var(--orange); }
+
+/* Filmi atla düğmesi */
+.lf-skip {
+    position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 6;
+    display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; cursor: pointer;
+    font: 600 12.5px var(--body); letter-spacing: .02em; color: #F4EFE6;
+    background: rgba(15, 13, 23, .55); border: 1px solid rgba(244, 239, 230, .22);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    transition: opacity .35s ease, background .2s ease, border-color .2s ease;
+}
+.lf-skip:hover, .lf-skip:focus-visible { background: rgba(255, 138, 61, .9); border-color: transparent; color: #1A0F05; outline: none; }
+.lf-skip.is-hidden { opacity: 0; pointer-events: none; }
+html:not(.js) .lf-skip { display: none; }
+html[lang=fa] .lf-skip { font-family: Vazirmatn, system-ui, sans-serif; letter-spacing: 0; }
+@media (max-width: 640px) { .lf-skip { bottom: 16px; padding: 7px 14px; font-size: 12px; } }
+
+/* Hakkımda: “Neden Lazy Fennec?” */
+.lf-why { display: flex; gap: 16px; align-items: flex-start; padding: 16px 18px; border-radius: 16px; background: rgba(255, 138, 61, .08); border: 1px solid rgba(255, 138, 61, .28); }
+.lf-why__fox { flex: none; margin-top: 2px; }
+.lf-why strong { display: block; margin-bottom: 4px; color: var(--orange); font-size: 15px; }
+.lf-about__text .lf-why p { font-size: 15px; line-height: 1.6; }
+@media (max-width: 640px) { .lf-why { padding: 12px 14px; gap: 12px; } .lf-why__fox { width: 46px; height: 35px; } .lf-about__text .lf-why p { font-size: 14px; } }
+html[data-theme="day"] .lf-skip { background: rgba(255, 250, 243, .75); color: #3A2414; border-color: #E9CFB4; }
+html[data-theme="day"] .lf-why { background: rgba(255, 138, 61, .1); }
+
+/* Hafif mod (zayıf cihazlar): pahalı efektleri kapat */
+html.lf-lite .lf-star, html.lf-lite .lf-drift, html.lf-lite .lf-drift2, html.lf-lite .lf-float,
+html.lf-lite .lf-day__cloud, html.lf-lite .lf-mt__star, html.lf-lite .lf-bubble { animation: none; }
+html.lf-lite .lf-shoot { display: none; }
+html.lf-lite *, html.lf-lite *::before, html.lf-lite *::after { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+html.lf-lite .lf-skip { background: rgba(15, 13, 23, .85); }
