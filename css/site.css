@@ -649,7 +649,7 @@ html[lang="fa"] .lf-mt__title { line-height: 1.4; }
 
 /* Filmi atla düğmesi */
 .lf-skip {
-    position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 6;
+    position: absolute; top: 22px; right: 24px; z-index: 6;
     display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; cursor: pointer;
     font: 600 12.5px var(--body); letter-spacing: .02em; color: #F4EFE6;
     background: rgba(15, 13, 23, .55); border: 1px solid rgba(244, 239, 230, .22);
@@ -660,7 +660,9 @@ html[lang="fa"] .lf-mt__title { line-height: 1.4; }
 .lf-skip.is-hidden { opacity: 0; pointer-events: none; }
 html:not(.js) .lf-skip { display: none; }
 html[lang=fa] .lf-skip { font-family: Vazirmatn, system-ui, sans-serif; letter-spacing: 0; }
-@media (max-width: 640px) { .lf-skip { bottom: 16px; padding: 7px 14px; font-size: 12px; } }
+@media (max-width: 640px) { .lf-skip { top: 14px; right: 14px; padding: 7px 14px; font-size: 12px; } }
+html[dir=rtl] .lf-skip { right: auto; left: 24px; }
+@media (max-width: 640px) { html[dir=rtl] .lf-skip { left: 14px; } }
 
 /* Hakkımda: “Neden Lazy Fennec?” */
 .lf-why { display: flex; gap: 16px; align-items: flex-start; padding: 16px 18px; border-radius: 16px; background: rgba(255, 138, 61, .08); border: 1px solid rgba(255, 138, 61, .28); }
@@ -677,3 +679,4 @@ html.lf-lite .lf-day__cloud, html.lf-lite .lf-mt__star, html.lf-lite .lf-bubble 
 html.lf-lite .lf-shoot { display: none; }
 html.lf-lite *, html.lf-lite *::before, html.lf-lite *::after { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
 html.lf-lite .lf-skip { background: rgba(15, 13, 23, .85); }
+html.lf-lite[data-theme="day"] .lf-skip { background: rgba(255, 250, 243, .92); }
