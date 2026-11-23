@@ -474,7 +474,7 @@
       if (dest !== 'native') { e.preventDefault(); if (!anim) go(dest); }
     });
 
-    // "Siteye geç": filmi atlayıp doğrudan ana sayfaya (kasma olursa diye)
+    // "Siteye geç": yalnızca ilk sahnede görünür; filmi atlayıp doğrudan ana sayfaya geçer (kasma olursa diye)
     var skip = $('lf-skip');
     if (skip) {
       skip.addEventListener('click', function () {
@@ -482,7 +482,7 @@
         jump(range().end); root.style.scrollBehavior = ''; animEnd = performance.now();
         skip.blur();
       });
-      var updSkip = function () { var g = range(); skip.classList.toggle('is-hidden', window.scrollY > g.top + g.len * 0.88); };
+      var updSkip = function () { var g = range(); skip.classList.toggle('is-hidden', window.scrollY > g.top + g.len * 0.03); };
       window.addEventListener('scroll', updSkip, { passive: true });
       updSkip();
     }
